@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+
+<div class="battle">
+
+
+<div class="fighter">
+
+
+<h2>
+🧙 {{hero.name}}
+</h2>
+
+
+<div class="bar">
+
+<div class="hp"
+style="width:{{hero.hp/hero.max_hp*100}}%">
+</div>
+
+</div>
+
+
+<h3>
+HP {{hero.hp}}
+</h3>
+
+
+<p>
+Attack:
+{{hero.attack}}
+</p>
+
+
+</div>
+
+
+
+
+<h1 class="vs">
+VS
+</h1>
+
+
+
+<div class="fighter enemy">
+
+
+<h2>
+👹 {{enemy.name}}
+</h2>
+
+
+<div class="bar">
+
+<div class="enemyhp"
+style="width:{{enemy.hp/300*100}}%">
+</div>
+
+</div>
+
+
+<h3>
+HP {{enemy.hp}}
+</h3>
+
+
+<p>
+Damage:
+{{enemy.attack}}
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+<h2 id="message">
+{{message}}
+</h2>
+
+
+
+<form method="POST"
+class="actions">
+
+
+<button 
+name="action"
+value="attack"
+onclick="attackAnimation()">
+
+⚔ ATTACK
+
+</button>
+
+
+
+<button
+name="action"
+value="heal">
+
+🧪 POTION
+
+</button>
+
+
+
+</form>
+
+
+{% endblock %}

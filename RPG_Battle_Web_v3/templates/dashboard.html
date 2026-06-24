@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<div class="container">
+
+
+<h1>Hero Dashboard</h1>
+
+
+
+{% if hero %}
+
+
+<div class="hero-card">
+
+
+<h2>
+{{hero.name}}
+</h2>
+
+
+<h3>
+{{hero.role}}
+</h3>
+
+
+<div class="bar">
+
+<div class="hp"
+style="width:{{hero.hp/hero.max_hp*100}}%">
+</div>
+
+</div>
+
+
+<p>
+❤️ {{hero.hp}} / {{hero.max_hp}}
+</p>
+
+
+<p>
+Level:
+{{hero.level}}
+</p>
+
+
+<p>
+XP:
+{{hero.xp}}
+</p>
+
+
+<a class="btn"
+href="/battle">
+Enter Battle
+</a>
+
+
+</div>
+
+
+
+{% else %}
+
+
+
+<form method="POST">
+
+
+<input
+name="name"
+placeholder="Hero name">
+
+
+<select name="role">
+
+<option>Warrior</option>
+
+<option>Mage</option>
+
+<option>Archer</option>
+
+</select>
+
+
+<button>
+Create Hero
+</button>
+
+
+</form>
+
+
+{% endif %}
+
+
+
+</div>
+
+
+{% endblock %}
